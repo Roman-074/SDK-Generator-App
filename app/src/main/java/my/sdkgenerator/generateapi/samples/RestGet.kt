@@ -1,4 +1,4 @@
-package samples
+package my.sdkgenerator.generateapi.samples
 
 import com.beust.klaxon.Json
 import com.beust.klaxon.JsonObject

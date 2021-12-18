@@ -1,6 +1,6 @@
 package my.sdkgenerator
 
-import com.maasglobal.sdkgeneerator.snaps.FilterSnap
+import my.sdkgenerator.snaps.FilterSnap
 import org.json.JSONArray
 
 class MainPipeline() {
@@ -22,4 +22,5 @@ class MainPipeline() {
                 onError(it)
             })
     }
+
 }

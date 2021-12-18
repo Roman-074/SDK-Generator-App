@@ -5,7 +5,7 @@
   "name_pipeline": "OrderFilter",
   "snap_map": {
     "snap": {
-      "snap_name": "Mapper",
+      "snap_name": "Filter",
       "property_map": {
         "info": {
           "notes": {},
@@ -157,7 +157,7 @@
       }
     },
     "snap": {
-      "snap_name": "REST Get",
+      "snap_name": "Filter",
       "property_map": {
         "info": {
           "notes": {},

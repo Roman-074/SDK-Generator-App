@@ -1,4 +1,4 @@
-package samples
+package my.sdkgenerator.generateapi.samples
 
 class Filter {
 
