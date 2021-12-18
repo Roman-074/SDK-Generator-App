@@ -2,6 +2,7 @@
 
   "instance_version": 37,
   "link_serial": 105,
+  "name_pipeline": "OrderFilter",
   "snap_map": {
     "snap": {
       "snap_name": "Mapper",
