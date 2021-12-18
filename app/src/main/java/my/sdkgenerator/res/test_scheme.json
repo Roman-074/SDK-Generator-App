@@ -1,0 +1,282 @@
+{
+
+  "instance_version": 37,
+  "link_serial": 105,
+  "snap_map": {
+    "snap": {
+      "snap_name": "Mapper",
+      "property_map": {
+        "info": {
+          "notes": {},
+          "label": {
+            "value": "Mapper"
+          }
+        },
+        "view_serial": 100,
+        "input": {
+          "input0": {
+            "view_type": {
+              "value": "document"
+            },
+            "label": {
+              "value": "input0"
+            }
+          }
+        },
+        "settings": {
+          "nullSafeAccess": {
+            "value": false
+          },
+          "passThrough": {
+            "value": false
+          },
+          "execution_mode": {
+            "value": "Validate & Execute"
+          },
+          "transformations": {
+            "value": {
+              "mappingTable": {
+                "value": [
+                  {
+                    "targetPath": {
+                      "value": "id"
+                    },
+                    "expression": {
+                      "expression": true,
+                      "value": "$entity.id"
+                    }
+                  },
+                  {
+                    "targetPath": {
+                      "value": "title"
+                    },
+                    "expression": {
+                      "expression": true,
+                      "value": "$entity.title"
+                    }
+                  },
+                  {
+                    "targetPath": {
+                      "value": "body"
+                    },
+                    "expression": {
+                      "expression": true,
+                      "value": "$entity.body"
+                    }
+                  }
+                ]
+              },
+              "mappingRoot": {
+                "value": "$"
+              }
+            }
+          }
+        },
+        "error": {
+          "error0": {
+            "view_type": {
+              "value": "document"
+            },
+            "label": {
+              "value": "error0"
+            }
+          },
+          "error_behavior": {
+            "value": "fail"
+          }
+        },
+        "output": {
+          "output0": {
+            "view_type": {
+              "value": "document"
+            },
+            "label": {
+              "value": "output0"
+            }
+          }
+        }
+      }
+    },
+    "snap": {
+      "snap_name": "Filter",
+      "property_map": {
+        "info": {
+          "notes": {},
+          "label": {
+            "value": "Filter"
+          }
+        },
+        "view_serial": 100,
+        "input": {
+          "input0": {
+            "view_type": {
+              "value": "document"
+            },
+            "label": {
+              "value": "input0"
+            }
+          }
+        },
+        "settings": {
+          "filterExpression": {
+            "expression": true,
+            "value": "$entity.id==1"
+          },
+          "execution_mode": {
+            "value": "Validate & Execute"
+          }
+        },
+        "error": {
+          "error0": {
+            "view_type": {
+              "value": "document"
+            },
+            "label": {
+              "value": "error0"
+            }
+          },
+          "error_behavior": {
+            "value": "fail"
+          }
+        },
+        "output": {
+          "output0": {
+            "view_type": {
+              "value": "document"
+            },
+            "label": {
+              "value": "output0"
+            }
+          }
+        }
+      },
+      "snap_model": {
+        "model_name" : "FilterModel",
+        "filter" : "extension"
+      }
+    },
+    "snap": {
+      "snap_name": "REST Get",
+      "property_map": {
+        "info": {
+          "notes": {},
+          "label": {
+            "value": "REST Get"
+          }
+        },
+        "view_serial": 100,
+        "account": {
+          "account_ref": {
+            "value": {}
+          }
+        },
+        "input": {
+          "input0": {
+            "label": {
+              "value": "input0"
+            },
+            "view_type": {
+              "value": "document"
+            }
+          }
+        },
+        "settings": {
+          "retryInterval": {
+            "value": 3
+          },
+          "trustAllCerts": {
+            "value": false
+          },
+          "execution_mode": {
+            "value": "Validate & Execute"
+          },
+          "retry": {
+            "value": 5
+          },
+          "hasNext": {
+            "expression": true,
+            "value": null
+          },
+          "timeout": {
+            "value": 900
+          },
+          "processArray": {
+            "value": false
+          },
+          "retryPolicy": {
+            "value": "Connection errors"
+          },
+          "showAllHeaders": {
+            "value": false
+          },
+          "paginationInterval": {
+            "value": 0
+          },
+          "executeDuringPreview": {
+            "value": true
+          },
+          "normalizeUri": {
+            "value": true
+          },
+          "header": {
+            "value": []
+          },
+          "responseEntityType": {
+            "value": "DEFAULT"
+          },
+          "followRedirects": {
+            "value": true
+          },
+          "serviceUrl": {
+            "expression": true,
+            "value": "'https://jsonplaceholder.typicode.com/posts/'+_id"
+          },
+          "connTimeout": {
+            "value": 30
+          },
+          "nextUrl": {
+            "expression": true,
+            "value": null
+          },
+          "queryParams": {
+            "value": []
+          },
+          "rawData": {
+            "value": false
+          }
+        },
+        "error": {
+          "error0": {
+            "label": {
+              "value": "error0"
+            },
+            "view_type": {
+              "value": "document"
+            }
+          },
+          "error_behavior": {
+            "value": "fail"
+          }
+        },
+        "output": {
+          "output0": {
+            "label": {
+              "value": "output0"
+            },
+            "view_type": {
+              "value": "document"
+            }
+          }
+        }
+      },
+      "snap_model": {
+        "model_name" : "GetModel",
+        "url" : "url_value",
+        "body" : "json_body",
+        "header": "header_value"
+      }
+    }
+  },
+  "target_runtime": "standard"
+
+}
