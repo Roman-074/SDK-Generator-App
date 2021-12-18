@@ -8,18 +8,19 @@ import my.sdkgenerator.generateapi.parse.FileParser.parseMyParams
 import my.sdkgenerator.generateapi.parse.ResultModel
 
 class MainActivity : AppCompatActivity() {
-
-    private var resultModel: ResultModel? = null
-
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-//        val stringJson : String = getResJson()
-//        resultModel = parseMyParams(stringJson)
-
-//        Generator().restGetModel()
-
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.button.setOnClickListener {
+            MainPipeline().execute(JSONArray(JsonData.getData()),
+                {
+                    binding.textView.text = it.toString()
+                },
+                {
+                    binding.textView.text = it.toString()
+                })
+        }
     }
-
 }
