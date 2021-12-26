@@ -1,10 +1,10 @@
-package my.sdkgenerator.generateapi.parse
+package my.sdkgenerator.mock
 
 import com.beust.klaxon.Klaxon
 import java.io.InputStream
 import java.nio.charset.Charset
 
-object FileParser {
+class FileParser {
 
     fun getResJson(): String {
         val inputFile = javaClass.getResource("test_scheme.json")

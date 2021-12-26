@@ -1,4 +1,4 @@
-package my.sdkgenerator.generateapi.parse
+package my.sdkgenerator.mock
 
 import com.beust.klaxon.Json
 

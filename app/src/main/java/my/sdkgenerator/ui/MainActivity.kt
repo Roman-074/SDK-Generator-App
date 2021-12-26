@@ -3,9 +3,10 @@ package my.sdkgenerator.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import by.kirich1409.viewbindingdelegate.viewBinding
-import my.sdkgenerator.MainPipeline
+import my.sdkgenerator.snaps.MainPipeline
 import my.sdkgenerator.R
 import my.sdkgenerator.databinding.ActivityMainBinding
+import my.sdkgenerator.generateapi.samples.OrderFilter
 import my.sdkgenerator.mock.JsonData
 import org.json.JSONArray
 
@@ -26,6 +27,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                     viewBinding.textView.text = it.toString()
                 })
         }
+
+
+        OrderFilter().executeForAwait(JSONArray(JsonData.getData()), onSuccess = {}, onError = {})
 
     }
 

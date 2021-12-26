@@ -1,6 +1,5 @@
-package my.sdkgenerator
+package my.sdkgenerator.snaps
 
-import my.sdkgenerator.snaps.FilterSnap
 import org.json.JSONArray
 
 class MainPipeline {
