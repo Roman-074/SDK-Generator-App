@@ -1,28 +1,29 @@
-package my.sdkgenerator
+package my.sdkgenerator.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import by.kirich1409.viewbindingdelegate.viewBinding
+import my.sdkgenerator.MainPipeline
+import my.sdkgenerator.R
 import my.sdkgenerator.databinding.ActivityMainBinding
 import my.sdkgenerator.mock.JsonData
 import org.json.JSONArray
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
-    private lateinit var binding: ActivityMainBinding
+    private val viewBinding by viewBinding(ActivityMainBinding::bind)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        binding.button.setOnClickListener {
+        viewBinding.button.setOnClickListener {
             MainPipeline().execute(
                 JSONArray(JsonData.getData()),
                 {
-                    binding.textView.text = it.toString()
+                    viewBinding.textView.text = it.toString()
                 },
                 {
-                    binding.textView.text = it.toString()
+                    viewBinding.textView.text = it.toString()
                 })
         }
 

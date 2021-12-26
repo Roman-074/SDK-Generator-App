@@ -3,7 +3,7 @@ package my.sdkgenerator
 import my.sdkgenerator.snaps.FilterSnap
 import org.json.JSONArray
 
-class MainPipeline() {
+class MainPipeline {
 
     fun execute(
         dataInput: JSONArray,

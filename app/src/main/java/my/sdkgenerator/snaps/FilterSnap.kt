@@ -9,9 +9,6 @@ class FilterSnap(
     val onSuccess: (JSONArray) -> Unit,
     val onError: (JSONArray) -> Unit
 ) {
-    init {
-        execute()
-    }
 
     fun execute() {
         val newArray = JSONArray()
@@ -27,5 +24,11 @@ class FilterSnap(
 
         }
         onSuccess(newArray)
+    }
+
+
+
+    init {
+        execute()
     }
 }
