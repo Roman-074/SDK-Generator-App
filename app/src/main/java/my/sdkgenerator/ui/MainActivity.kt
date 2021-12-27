@@ -6,6 +6,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import my.sdkgenerator.snaps.MainPipeline
 import my.sdkgenerator.R
 import my.sdkgenerator.databinding.ActivityMainBinding
+import my.sdkgenerator.generateapi.generate.Generator
 import my.sdkgenerator.generateapi.samples.OrderFilter
 import my.sdkgenerator.mock.JsonData
 import org.json.JSONArray
@@ -29,7 +30,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         }
 
 
-        OrderFilter().executeForAwait(JSONArray(JsonData.getData()), onSuccess = {}, onError = {})
+        OrderFilter().execute(JSONArray(JsonData.getData()), onSuccess = { }, onError = { })
+
+        Generator().orderFilterExecute()
 
     }
 
